@@ -1,3 +1,6 @@
+## changes in this fork: 
+Added listeners for touch events, thanks to @danzeeeeman - so all that iOS touchscreen goodness behaves as desired. 
+
 # ofxSceneManager
 
 A lightweight addon for openFrameworks supporting crossfading, data passing and event handling.
