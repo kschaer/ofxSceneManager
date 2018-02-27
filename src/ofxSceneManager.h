@@ -55,6 +55,12 @@ public:
     void _onStartFadingOut(bool &b);
     void _onFinishScene(bool &b);
     
+    void _touchDown(ofTouchEventArgs & touch);
+    void _touchMoved(ofTouchEventArgs & touch);
+    void _touchUp(ofTouchEventArgs & touch);
+    void _touchDoubleTap(ofTouchEventArgs & touch);
+    void _touchCancelled(ofTouchEventArgs & touch);
+    
     void _keyPressed(ofKeyEventArgs & args);
     void _keyReleased(ofKeyEventArgs & args);
     void _mouseMoved(ofMouseEventArgs & args);

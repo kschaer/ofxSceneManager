@@ -29,6 +29,13 @@ void ofxSceneManager::run() {
     // Events
     ofAddListener(ofEvents().keyPressed, this, &ofxSceneManager::_keyPressed);
     ofAddListener(ofEvents().keyReleased, this, &ofxSceneManager::_keyReleased);
+    
+    ofAddListener(ofEvents().touchMoved, this, &ofxSceneManager::_touchMoved);
+    ofAddListener(ofEvents().touchDown, this, &ofxSceneManager::_touchDown);
+    ofAddListener(ofEvents().touchUp, this, &ofxSceneManager::_touchUp);
+    ofAddListener(ofEvents().touchCancelled, this, &ofxSceneManager::_touchCancelled);
+    ofAddListener(ofEvents().touchDoubleTap, this, &ofxSceneManager::_touchDoubleTap);
+    
     ofAddListener(ofEvents().mouseMoved, this, &ofxSceneManager::_mouseMoved);
     ofAddListener(ofEvents().mouseDragged, this, &ofxSceneManager::_mouseDragged);
     ofAddListener(ofEvents().mousePressed, this, &ofxSceneManager::_mousePressed);
@@ -162,6 +169,22 @@ void ofxSceneManager::_keyPressed(ofKeyEventArgs &args) {
 
 void ofxSceneManager::_keyReleased(ofKeyEventArgs &args) {
     _currentScene->keyReleased(args.key);
+}
+
+void ofxSceneManager::_touchDown(ofTouchEventArgs & touch) {
+    _currentScene->touchDown(touch);
+}
+void ofxSceneManager::_touchMoved(ofTouchEventArgs & touch) {
+    _currentScene->touchMoved(touch);
+}
+void ofxSceneManager::_touchUp(ofTouchEventArgs & touch) {
+    _currentScene->touchUp(touch);
+}
+void ofxSceneManager::_touchDoubleTap(ofTouchEventArgs & touch) {
+    _currentScene->touchDoubleTap(touch);
+}
+void ofxSceneManager::_touchCancelled(ofTouchEventArgs & touch) {
+    _currentScene->touchCancelled(touch);
 }
 
 void ofxSceneManager::_mouseMoved(ofMouseEventArgs &args) {
